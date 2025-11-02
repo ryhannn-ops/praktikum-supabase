@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS mahasiswa;
+
+CREATE TABLE mahasiswa (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  nama VARCHAR(100),
+  nim VARCHAR(15),
+  jurusan VARCHAR(50),
+  angkatan INT
+);
+
+
+SELECT nama, jurusan FROM mahasiswa WHERE angkatan = 2024;
+
+INSERT INTO mahasiswa (nama, nim, jurusan, angkatan)
+VALUES ('Muflih Rosyiq', '241111074', 'Teknik Komputer dan Jaringan', 2024);
+
+INSERT INTO mahasiswa (nama, nim, jurusan, angkatan)
+VALUES ('Jais Napitupulu', '230000087', 'Sistem Informasi', 2023);
+
+INSERT INTO mahasiswa (nama, nim, jurusan, angkatan)
+VALUES ('Kanda Sitorus ', '242222076', 'Teknik Elektro', 2024);
+
+UPDATE mahasiswa
+SET jurusan = 'Informatika'
+WHERE nim = '241111074';
+
+DELETE FROM mahasiswa
+WHERE nim = '241111076'; 
